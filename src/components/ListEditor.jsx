@@ -18,7 +18,7 @@ export default class ListEditor extends React.Component {
     rowTemplate(key) {
         return (
             <Row key={key} align='middle' type="flex" justify="center">
-                {this.props.template}
+                {React.cloneElement(this.props.template, {title: 'Card ' + key})}
                 <Button id={key} type="primary" icon="minus-circle" onClick={this.subtractComponent} style={{ marginLeft:"8px" }}/>
             </Row>
         )
